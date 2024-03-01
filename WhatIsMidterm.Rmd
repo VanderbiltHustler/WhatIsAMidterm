@@ -1,0 +1,81 @@
+---
+title: "WhatIsMidterm"
+author: "Katherine Oung, Vanderbilt University"
+date: "2024-02-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(lubridate)
+
+data <- read.csv("midterm-data.csv")
+
+
+```
+
+
+//heatmap of dates of midterms
+```{r}
+data %>%
+  filter(dates.of.midterms != "" & !is.na(dates.of.midterms) & dates.of.midterms != "N/A" & dates.of.midterms != "?") %>%
+  count(dates.of.midterms) %>%
+  arrange(-n)
+```
+
+```{r}
+lubridate_data <- data %>%
+  filter(dates.of.midterms != "" & !is.na(dates.of.midterms) & dates.of.midterms != "N/A" & dates.of.midterms != "?")
+
+year_to_add <- "2024"
+
+lubridate_data$dates.of.midterms <- paste(lubridate_data$dates.of.midterms, year_to_add, sep = "/") %>%
+  mdy()
+
+lubridate_data <- lubridate_data %>%
+  mutate(midterm_month = month(dates.of.midterms, label = TRUE, abbr = FALSE))
+```
+
+```{r}
+lubridate_data %>%
+  count(midterm_month) %>%
+  arrange(-n)
+```
+
+//heatmap of dates of papers
+
+
+//heatmap of dates of projects
+
+** put them together **
+
+
+//breakdown of midterm/paper/projects
+```{r}
+data %>%
+  mutate(breakdown) = case_when(
+    X..midterms > 0 & X..papers > 0 & X..projects > 0 ~ "exams, papers, projects",
+    X..midterms > 0 & X..papers > 0 & X..projects == 0 ~ "exams, papers"
+    X..midterms > 0 & X..papers == 0 & X..projects > 0 ~ "exams, projects"
+
+    TRUE ~ X6
+  ))
+
+```
+
+
+//number of midterms
+```{r}
+data %>%
+  filter(X..midterms != "" & !is.na(X..midterms) & X..midterms != "N/A" & X..midterms != "?") %>%
+  count(X..midterms) %>%
+  arrange(-n)
+```
+
+```{r}
+data %>%
+  filter(X..midterms != "" & !is.na(X..midterms) & X..midterms != "N/A" & X..midterms != "?") %>%
+  group_by(College) %>%
+  count(X..midterms)
+```
+** do the same thing for projects and papers
