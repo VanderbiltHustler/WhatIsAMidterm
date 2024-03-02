@@ -34,6 +34,10 @@
 
 /* FONTS */
 /* add any @import statements for novelty fonts you want to use here ↓ */
+@font-face {
+  font-family: "Retro Gaming";
+  src: url('../fonts/RetroGaming.ttf') format('truetype');
+}
 
 /* COLORS */
 /* set any colors you plan to use throughout the buildout here */
@@ -43,7 +47,7 @@
     --idsred: #990000;
 
     body {
-        background-color: #D6B464;
+        background-color: #040254;
     }
 
 }
@@ -53,7 +57,7 @@
 header {
     /* add header image below */
     /* can use a file path before the photo is uploaded to ceo */
-    background-color: #D6B464;
+    background-color: #040254;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center; /* adjusts image placement, can also be set as percentages */
@@ -76,6 +80,39 @@ header {
     */
 }
 
+/* SET ANY MORE STYLES YOU WANT HERE: */
+h1, h2 {
+  font-family: "Retro Gaming";
+  font-style: normal;
+  color: white;
+  font-weight: 400;
+  margin: auto;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 58px;
+  margin-top: -0.5em;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: lighter;
+  margin-top: 50px;
+  width: 616px;
+}
+
+h4 {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  margin-top: 75px;
+}
 
 /* SET ANY MORE STYLES YOU WANT HERE: */
 .arrow-container {
@@ -163,7 +200,7 @@ No media query for `xs` since this is the default */
 
 @media (max-width: 1000px) {
   header {
-    background-color: #D6B464;
+    background-color: #040254;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -171,18 +208,23 @@ No media query for `xs` since this is the default */
 }
 
 /* Medium devices (tablets, 768px and up) */
-/*@media (min-width: 768px) {
-    header {
-        /* adjust header image positioning for larger devices if needed */
-        /* you can also change the header image for mobile here */
-        /* background-position: 50% 50%; 
-    } 
+@media (min-width: 768px) {
+    h1 {
+      font-size: 72px;
+    }
+    
+    h2 {
+      font-size: 107px;
+    }
+    
+    h3 {
+      font-size: 20px;
+    }
   }
-*/
 
 
 /* Large devices (desktops, 992px and up) */
-/*@media (min-width: 992px) {
+/* @media (min-width: 992px) {
 
 }
 
