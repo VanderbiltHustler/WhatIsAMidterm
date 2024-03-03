@@ -100,7 +100,7 @@ h2 {
 
 h3 {
   font-size: 18px;
-  font-weight: lighter;
+  font-weight: 300;
   margin-top: 50px;
   width: 610px;
 }
@@ -111,7 +111,7 @@ h4 {
   font-size: 40px;
   color: white;
   text-align: center;
-  margin-top: 75px;
+  margin-top: 100px;
 }
 
 .no-mobile {
@@ -241,13 +241,16 @@ No media query for `xs` since this is the default */
   }
 
   h1 {
-    margin-top: -225px;
+    margin-top: -250px;
   }
 
   #stars-img {
     width: 100px;
-    float: right;
-    margin-right: 300px;
+    margin-left: 1120px;
+  }
+
+  h3 {
+    margin-top: -50px;
   }
 
 }
