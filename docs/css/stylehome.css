@@ -102,7 +102,7 @@ h3 {
   font-size: 18px;
   font-weight: lighter;
   margin-top: 50px;
-  width: 616px;
+  width: 610px;
 }
 
 h4 {
@@ -112,6 +112,10 @@ h4 {
   color: white;
   text-align: center;
   margin-top: 75px;
+}
+
+.no-mobile {
+  display: none;
 }
 
 /* SET ANY MORE STYLES YOU WANT HERE: */
@@ -224,7 +228,27 @@ No media query for `xs` since this is the default */
 
 
 /* Large devices (desktops, 992px and up) */
-/* @media (min-width: 992px) {
+@media (min-width: 992px) {
+
+  .no-mobile {
+    display: inline-block;
+  }
+
+  #moon-img {
+    width: 100px;
+    margin-left: 275px;
+    margin-top: 150px;
+  }
+
+  h1 {
+    margin-top: -225px;
+  }
+
+  #stars-img {
+    width: 100px;
+    float: right;
+    margin-right: 300px;
+  }
 
 }
 
