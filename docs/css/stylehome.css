@@ -234,23 +234,28 @@ No media query for `xs` since this is the default */
     display: inline-block;
   }
 
-  #moon-img {
-    width: 100px;
-    margin-left: 275px;
-    margin-top: 150px;
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 
   h1 {
-    margin-top: -250px;
+    width: 900px;
+  }
+
+  #moon-img {
+    width: 100px;
+    height: 100px;
+    margin-top: 150px;
+    margin-right: -75px;
   }
 
   #stars-img {
     width: 100px;
-    margin-left: 1120px;
-  }
-
-  h3 {
-    margin-top: -50px;
+    height: 100px;
+    margin-top: 400px;
+    margin-left: -75px;
   }
 
 }
