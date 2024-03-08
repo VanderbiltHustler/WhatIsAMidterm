@@ -42,6 +42,34 @@ lubridate_data %>%
   arrange(-n)
 ```
 
+```{r}
+lubridate_data <- lubridate_data %>%
+  mutate(midterm_week = case_when(
+    dates.of.midterms >= ymd("2024-01-08") & dates.of.midterms <= ymd ("2024-01-12") ~ "Week 1",
+    dates.of.midterms >= ymd("2024-01-15") & dates.of.midterms <= ymd ("2024-01-19") ~ "Week 2",
+    dates.of.midterms >= ymd("2024-01-22") & dates.of.midterms <= ymd ("2024-01-26") ~ "Week 3",
+    dates.of.midterms >= ymd("2024-01-29") & dates.of.midterms <= ymd ("2024-02-02") ~ "Week 4",
+    dates.of.midterms >= ymd("2024-02-05") & dates.of.midterms <= ymd ("2024-02-09") ~ "Week 5",
+    dates.of.midterms >= ymd("2024-02-12") & dates.of.midterms <= ymd ("2024-02-16") ~ "Week 6",
+    dates.of.midterms >= ymd("2024-02-19") & dates.of.midterms <= ymd ("2024-02-23") ~ "Week 7",
+    dates.of.midterms >= ymd("2024-02-26") & dates.of.midterms <= ymd ("2024-03-01") ~ "Week 8",
+    dates.of.midterms >= ymd("2024-03-04") & dates.of.midterms <= ymd ("2024-03-08") ~ "Week 9",
+    dates.of.midterms >= ymd("2024-03-11") & dates.of.midterms <= ymd ("2024-03-15") ~ "Week 10",
+    dates.of.midterms >= ymd("2024-03-18") & dates.of.midterms <= ymd ("2024-03-22") ~ "Week 11",
+    dates.of.midterms >= ymd("2024-03-25") & dates.of.midterms <= ymd ("2024-03-29") ~ "Week 12",
+    dates.of.midterms >= ymd("2024-04-01") & dates.of.midterms <= ymd ("2024-04-05") ~ "Week 13",
+    dates.of.midterms >= ymd("2024-04-08") & dates.of.midterms <= ymd ("2024-04-12") ~ "Week 15",
+    dates.of.midterms >= ymd("2024-04-15") & dates.of.midterms <= ymd ("2024-04-19") ~ "Week 16",
+    dates.of.midterms >= ymd("2024-04-22") ~ "Week 17"
+  ))
+```
+
+```{r}
+lubridate_data %>%
+  count(midterm_week) %>%
+  arrange(-n)
+```
+
 //heatmap of dates of papers
 
 
